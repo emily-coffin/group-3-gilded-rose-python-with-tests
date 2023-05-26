@@ -2,6 +2,29 @@ Modified by me from the original, found at https://github.com/istepaniuk/gilded-
 
 0. It's in Python 3 now.  So, really the only original content is the README from "Coding Dojo" on
 
+
+## Getting Started
+
+```sh
+echo "Creating virtual environment"
+python3 -m venv venv
+```
+
+```sh
+echo "Activates virtual environment"
+. ./venv/bin/activate
+```
+
+```sh
+echo "Update pip"
+pip install --upgrade pip
+```
+
+```sh
+echo "Install python packages"
+pip install -r requirements.txt
+```
+
 ## Installing
 
 Clone the repo and cd to the project directory.
@@ -33,11 +56,11 @@ Note that this Kata has been slightly modified from [the original](http://iamnot
 
 Gilded Rose
 ===========
-Hi and welcome to team Gilded Rose. 
+Hi and welcome to team Gilded Rose.
 As you know, we are a small inn with a prime location in a prominent city run by a friendly innkeeper named Allison.
 We also buy and sell only the finest goods.
 
-Unfortunately, our goods are constantly degrading in quality as they approach their sell by date. We have a system in place that updates our inventory for us. 
+Unfortunately, our goods are constantly degrading in quality as they approach their sell by date. We have a system in place that updates our inventory for us.
 
 It was developed by a guy named Leeroy, who has moved on to new adventures. Your task is to add the new feature to our system so that we can begin selling a new category of items. First an introduction to our system:
 
@@ -52,8 +75,8 @@ Pretty simple, right? Well this is where it gets interesting:
  - "Aged Brie" increases in Quality the older it gets.
  - The Quality of an item is never more than 50, but "Sulfuras" is a legendary item and as such its Quality is always 80 and it never alters.
  - "Backstage passes", like "Aged Brie", increases by one in Quality as its SellIn date approaches
-     - Quality increases by 2 when there are 10 days or less 
-     - Quality increases by 3 when there are 5 days or less 
+     - Quality increases by 2 when there are 10 days or less
+     - Quality increases by 3 when there are 5 days or less
      - Quality drops to 0 after the concert
 
 We have recently signed a supplier of conjured items. This requires AN UPDATE to our system:
