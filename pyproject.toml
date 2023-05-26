@@ -1,0 +1,75 @@
+[tool.poetry]
+name = "group-3-gilded-rose-python-with-tests"
+version = "0.1.0"
+description = ""
+authors = [""]
+readme = "README.md"
+packages = [{include = "group_3_gilded_rose_python_with_tests"}]
+
+[tool.poetry.dependencies]
+python = "~3.9.5"
+appdirs = "^1.4.4"
+argh = "^0.28.1"
+colorama = "^0.4.6"
+packaging = "^23.1"
+pathtools = "^0.1.2"
+pyparsing = "^3.0.9"
+pyyaml = "^6.0"
+six = "^1.16.0"
+termstyle = "^0.1.11"
+watchdog = "^3.0.0"
+
+[tool.poetry.dev-dependencies]
+black = "^23.3.0"
+coverage = "^7.2.6"
+pytest = "^7.3.1"
+pytest-cov = "^4.1.0"
+pylint = "^2.17.4"
+pylint-pytest = "^1.1.2"
+
+
+[tool.coverage.run]
+omit = [
+    "*test.py"
+]
+
+[tool.pylint.main]
+recursive = true
+load-plugins = [
+  "pylint_pytest"
+]
+ignore = [".venv", "gilded_rose_test.py", "unit_test_results"]
+
+[tool.pylint.format]
+# Match up with Black.
+max-line-length = "88"
+
+[tool.pylint.messages_control]
+disable = [
+    "missing-docstring",
+    "broad-except",
+    "line-too-long",
+    "no-else-return",
+    "too-many-nested-blocks",
+    "invalid-name",
+    "logging-fstring-interpolation",
+    "function-redefined",
+    "duplicate-code",
+    "cannot-enumerate-pytest-fixtures"
+]
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.isort]
+# Match up with Black.
+profile = "black"
+
+[tool.pytest.ini_options]
+minversion = 7.0
+testpaths = "tests"
+markers = "freeze_time"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
