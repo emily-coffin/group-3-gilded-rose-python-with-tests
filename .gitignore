@@ -2,5 +2,6 @@
 __pycache__
 .coverage
 cover
-venv
+venv/
 unit_test_results/
+coverage
