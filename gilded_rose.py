@@ -2,7 +2,10 @@ class GildedRose:
     @staticmethod
     def update_quality(items):
         for i in range(0, len(items)):
-            if "Aged Brie" != items[i].name and "Backstage passes to a TAFKAL80ETC concert" != items[i].name:
+            if (
+                "Aged Brie" != items[i].name
+                and "Backstage passes to a TAFKAL80ETC concert" != items[i].name
+            ):
                 # TODO: Improve this code.  Word.
                 if items[i].quality > 0:
                     if "Sulfuras, Hand of Ragnaros" != items[i].name:

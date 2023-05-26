@@ -4,4 +4,4 @@ __pycache__
 cover
 venv/
 unit_test_results/
-coverage
+coverage.xml

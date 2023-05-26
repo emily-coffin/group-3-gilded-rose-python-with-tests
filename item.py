@@ -3,4 +3,3 @@ class Item:
         self.name = name
         self.sell_in = sell_in
         self.quality = quality
-
