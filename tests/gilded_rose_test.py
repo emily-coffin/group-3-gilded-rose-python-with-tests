@@ -1,5 +1,5 @@
-from item import Item
-from gilded_rose import GildedRose
+from src.item import Item
+from src.gilded_rose import GildedRose
 
 from unittest import TestCase, skip
 
