@@ -1,9 +1,13 @@
+from copy import deepcopy
+
+
 def update_quality(items):
     new_items = [_item_quality(item) for item in items]
     return new_items
 
 
-def _item_quality(item):
+def _item_quality(original_item):
+    item = deepcopy(original_item)
     if (
         "Aged Brie" != item.name
         and "Backstage passes to a TAFKAL80ETC concert" != item.name
