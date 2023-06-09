@@ -1,8 +1,6 @@
 def update_quality(items):
-    for item in items:
-        _item_quality(item)
-
-    return items
+    new_items = [_item_quality(item) for item in items]
+    return new_items
 
 
 def _item_quality(item):
@@ -53,3 +51,4 @@ def _item_quality(item):
     if "Sulfuras, Hand of Ragnaros" != item.name:
         if item.quality > 50:
             item.quality = 50
+    return item
