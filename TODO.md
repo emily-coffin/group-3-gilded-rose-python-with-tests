@@ -2,6 +2,10 @@
 
 - ~Get rid of GildedRose class~
 - ~item quality is mutated, make immutable?~
-- Pull out similar value adjustments into private functions
+- ~Declassify tests~
+
+- NEXT: Try rewriting code instead of modifying existing
+
 - What to do about nested ifs?
-- Declassify tests
+- Pull out similar value adjustments into private functions
+- parameterize tests
