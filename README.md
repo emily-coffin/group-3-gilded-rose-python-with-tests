@@ -58,9 +58,3 @@ Feel free to make any changes to the UpdateQuality method and add any new code a
 Your work needs to be completed by 20:00hs.
 
 Just for clarification, an item can never have its Quality increase above 50.
-
-### TODO
-
-Start off with creating an outline
-
-- Identify the which 3 items we would like to accomplish
