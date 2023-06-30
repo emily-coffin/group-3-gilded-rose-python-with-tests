@@ -99,9 +99,12 @@ def test_quality_does_go_below_zero():
 def test_conjured_items_decrease_in_quality_twice_as_fast():
     items = []
     items.append(Item("Conjured Mana Cake", 3, 6))
+    items.append(Item("Conjured Mana Cake", 0, 4))
 
     items = update_quality(items)
 
     
-    item = items[0]
-    assert item.quality == 4
+    fresh_item = items[0]
+    stale_item = items[1]
+    assert fresh_item.quality == 4
+    assert stale_item.quality == 0
