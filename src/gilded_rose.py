@@ -2,6 +2,8 @@ from copy import deepcopy
 
 IMPROVING_PRODUCTS = ["Aged Brie", "Backstage passes"]
 
+CONJUERED_PRODUCTS = ["Conjured Mana Cake"]
+
 
 def update_quality(items):
     new_items = [_item_quality(item) for item in items]
@@ -22,6 +24,8 @@ def _new_quality(item):
         return 80
     if item.name in IMPROVING_PRODUCTS:
         new_quality = _new_quality_improving(item)
+    elif item.name in CONJUERED_PRODUCTS:
+        new_quality = _new_quality_conjured(item)    
     else:
         new_quality = _new_quality_ordinary(item)
     return _normalize_quality(new_quality)
@@ -36,6 +40,9 @@ def _new_quality_improving(item):
         return 0
     return item.quality + 3
 
+
+def _new_quality_conjured(item):
+    return item.quality - 2
 
 def _new_quality_ordinary(item):
     if item.sell_in <= 0:
