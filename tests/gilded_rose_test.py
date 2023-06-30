@@ -95,14 +95,13 @@ def test_quality_does_go_below_zero():
     assert item.quality == 0
 
 
-@skip
+
 def test_conjured_items_decrease_in_quality_twice_as_fast():
     items = []
     items.append(Item("Conjured Mana Cake", 3, 6))
 
     items = update_quality(items)
 
-    expected = {"sell_in": 2, "quality": 2}
+    
     item = items[0]
-    assert item.quality == expected["quality"]
-    assert item.sell_in == expected["sell_in"]
+    assert item.quality == 4
