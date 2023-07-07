@@ -32,9 +32,11 @@ def _new_quality(item):
 
 
 def _new_quality_improving(item):
-    if item.sell_in > 10:
+    max_sell_in_days = 10
+    min_sell_in_days = 5
+    if item.sell_in > max_sell_in_days:
         return item.quality + 1
-    if item.sell_in > 5:
+    if item.sell_in > min_sell_in_days:
         return item.quality + 2
     if item.sell_in == 0:
         return 0
@@ -54,7 +56,8 @@ def _new_quality_ordinary(item):
 
 
 def _normalize_quality(quality):
-    if quality > 50:
+    max_quality = 50
+    if quality > max_quality:
         return 50
     if quality < 0:
         return 0

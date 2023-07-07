@@ -1,7 +1,6 @@
 import pytest
 from src.item import Item
 from src.gilded_rose import update_quality
-from unittest import skip
 
 
 def test_sell_in_decreases_by_one():
@@ -72,7 +71,8 @@ def test_sulfuras_the_immutable():
     items = update_quality(items)
 
     item = items[0]
-    assert item.quality == 80
+    expected_quality = 80
+    assert item.quality == expected_quality
 
 
 def test_quality_does_not_increase_past_50():
@@ -82,7 +82,8 @@ def test_quality_does_not_increase_past_50():
     items = update_quality(items)
 
     item = items[0]
-    assert item.quality == 50
+    expected_quality = 50
+    assert item.quality == expected_quality
 
 
 def test_quality_does_go_below_zero():
@@ -104,5 +105,6 @@ def test_conjured_items_decrease_in_quality_twice_as_fast():
 
     fresh_item = items[0]
     stale_item = items[1]
-    assert fresh_item.quality == 4
+    expected_quality = 4
+    assert fresh_item.quality == expected_quality
     assert stale_item.quality == 0
