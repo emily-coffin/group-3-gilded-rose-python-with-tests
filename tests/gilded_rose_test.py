@@ -46,7 +46,7 @@ def test_quality_decrease_twice_as_fast_after_sell_by():
 
     expected = [
         {"sell_in": -1, "quality": 18},
-        {"sell_in": -1, "quality": 4},
+        {"sell_in": -1, "quality": 2},
     ]
     for index, expectation in enumerate(expected):
         item = items[index]
@@ -95,7 +95,6 @@ def test_quality_does_go_below_zero():
     assert item.quality == 0
 
 
-
 def test_conjured_items_decrease_in_quality_twice_as_fast():
     items = []
     items.append(Item("Conjured Mana Cake", 3, 6))
@@ -103,7 +102,6 @@ def test_conjured_items_decrease_in_quality_twice_as_fast():
 
     items = update_quality(items)
 
-    
     fresh_item = items[0]
     stale_item = items[1]
     assert fresh_item.quality == 4

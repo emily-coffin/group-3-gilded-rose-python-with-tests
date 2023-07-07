@@ -25,7 +25,7 @@ def _new_quality(item):
     if item.name in IMPROVING_PRODUCTS:
         new_quality = _new_quality_improving(item)
     elif item.name in CONJUERED_PRODUCTS:
-        new_quality = _new_quality_conjured(item)    
+        new_quality = _new_quality_conjured(item)
     else:
         new_quality = _new_quality_ordinary(item)
     return _normalize_quality(new_quality)
@@ -42,7 +42,10 @@ def _new_quality_improving(item):
 
 
 def _new_quality_conjured(item):
+    if item.sell_in <= 0:
+        return item.quality - 4
     return item.quality - 2
+
 
 def _new_quality_ordinary(item):
     if item.sell_in <= 0:
